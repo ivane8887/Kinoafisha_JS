@@ -1,0 +1,32 @@
+{
+  "ka": {
+    "main": "მთავარი",
+    "festival": "ფესტივალი",
+    "engSessions": "ENG სეანსები",
+    "eventCinema": "EVENT CINEMA",
+    "ratings": "შეზღუდვები",
+    "contact": "კონტაქტი",
+    "app": "აპლიკაცია",
+    "terms": "წესები",
+    "movies": "ფილმები",
+    "sessions": "სეანსები",
+    "login": "შესვლა",
+    "register": "რეგისტრაცია",
+    "copyright": "Kinoafisha.ge © 2015-2023"
+  },
+  "en": {
+    "main": "Home",
+    "festival": "Festival",
+    "engSessions": "ENG Sessions",
+    "eventCinema": "Event Cinema",
+    "ratings": "Ratings",
+    "contact": "Contact",
+    "app": "Application",
+    "terms": "Terms",
+    "movies": "Movies",
+    "sessions": "Sessions",
+    "login": "Log In",
+    "register": "Register",
+    "copyright": "Kinoafisha.ge © 2015-2023"
+  }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinoafisha</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content login-min">
+    <span class="close-modal">&times;</span>
+
+    <h3>შესვლა</h3>
+
+    <form id="loginForm">
+      <input type="text" id="loginIdentity" placeholder="მეილი ან ნომერი">
+      <input type="password" id="loginPassword" placeholder="პაროლი">
+
+      <button type="submit">შესვლა</button>
+    </form>
+  </div>
+</div>
+
+<!-- SHEZGUDVEBI MODAL -->
+<div id="ratingsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+
+    <img src="suratebi/shezgudvebi.PNG" alt="Age Restrictions">
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contactModal" class="modal">
+  <div class="modal-content contact-min">
+    <span class="close-modal">&times;</span>
+
+    <h3>კონტაქტი</h3>
+
+    <form id="contactForm">
+      <input type="text" id="contactName" placeholder="ელ. ფოსტა">
+      <textarea id="contactMessage" placeholder="შეტყობინება"></textarea>
+      <button type="submit">გაგზავნა</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- WESEBI MODAL -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+
+    <!-- SURATI -->
+    <img src="suratebi/wesebi.PNG" alt="Terms and Rules">
+  </div>
+</div>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <nav class="nav">
+ <a href="#" data-i18n="main">მთავარი</a>
+    <a href="#" data-i18n="festival">ფესტივალი</a>
+    <a href="#" data-i18n="engSessions">ENG სეანსები</a>
+    <a href="#" data-i18n="eventCinema">EVENT CINEMA</a>
+    <a href="#" class="open-ratings" data-i18n="ratings">შეზღუდვები</a>
+    <a href="#" data-i18n="contact">კონტაქტი</a>
+    <a href="#" data-i18n="app">აპლიკაცია</a>
+    <a href="#" class="open-terms" data-i18n="terms">წესები</a>
+
+  </nav>
+  <div class="auth">
+    <button class="lang-btn">ENG</button>
+    <button class="login" data-i18n="login">შესვლა</button>
+    <button class="reg" data-i18n="register">რეგისტრაცია</button>
+  </div>
+</header>
+
+<!-- SLIDER -->
+<section class="slider">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide"><img src="suratebi/slider-avatari.jpg" alt="avatari"></div>
+    <div class="slide"><img src="suratebi/slider-spongebob.jpg" alt="spongebob"></div>
+    <div class="slide"><img src="suratebi/slider-cvalebadinishnebi.jpg" alt="cvalebadinishnebi"></div>
+    <div class="slide"><img src="suratebi/slider-lirika.jpg" alt="lirika"></div>
+    <div class="slide"><img src="suratebi/slider-zootopia.jpg" alt="zootopia"></div>
+  </div>
+
+  <div class="slider-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+<!-- TOGGLE -->
+<div class="switch-container">
+  <button type="button" class="switch-btn active" data-tab="movies">ფილმები</button>
+  <button type="button" class="switch-btn" data-tab="sessions">სეანსები</button>
+</div>
+
+
+<!-- FILMEBI -->
+<section class="container">
+  <div class="movies-grid big">
+    <!-- 6 ფილმი -->
+    <div class="movie">
+      <img src="suratebi/6-avatari.jpg">
+      <h4>ავატარი: ცეცხლი და ფერფლი</h4>
+      <div class="tags"><span>PG13</span><span>GEO</span><span>ENG</span></div>
+    </div>
+     <div class="movie"><img src="suratebi/6-lirika.jpg"><h4>ლირიკა</h4><div class="tags"><span>PG</span><span>GEO</span></div></div>
+     <div class="movie"><img src="suratebi/6-spongebob.jpg"><h4>სპანჯბობი კინოში: კვადრატული შარვლის ძიე...</h4><div class="tags"><span>PG</span><span>ENG</span><span>GEO</span></div></div>
+    <div class="movie"><img src="suratebi/6-anakonda.jpg"><h4>ანაკონდა</h4><div class="tags"><span>PG</span><span>GEO</span></div></div>
+    <div class="movie"><img src="suratebi/6-mokvdichemosikvarulo.jpg"><h4>მოკვდი ჩემო სიყვარულო</h4><div class="tags"><span>R</span><span>ENG</span></div></div>
+    <div class="movie"><img src="suratebi/6-zootopia2.jpg"><h4>ზოოტოპია 2</h4><div class="tags"><span>PG</span><span>GEO</span><span>ENG</span></div></div>
+  </div>
+</section>
+
+<!-- COMPACT MOVIES -->
+<section class="container">
+  <div class="movies-grid small">
+    <!-- Filmebi (qveda) -->
+     <div class="movie small"><img src="suratebi/patara/borotebis_mcveli.jpg"><h5>ბოროტების მცველი</h5><div class="tags"><span>R</span><span>GEO</span></div></div>
+     <div class="movie small"><img src="suratebi/patara/archevanis_garesheJ.jpg"><h5>არჩევანის გარეშე</h5><div class="tags"><span>R</span><span>KOR</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/dakarguli_kristali.jpg"><h5>დაკარგული კრისტ...</h5><div class="tags"><span>PG</span><span>GEO</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/stichhead.jpg"><h5>სტიჩჰედი და მონსტ...</h5><div class="tags"><span>PG</span><span>GEO</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/freddy.jpg"><h5>ხუთი ღამე ფრედი...</h5><div class="tags"><span>PG13</span><span>GEO</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/xmelifotoli.jpg"><h5>ხმელი ფოთოლი</h5><div class="tags"><span>PG</span><span>GEO</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/sicruis_iluzia.jpg"><h5>სიცრუის ილუზია</h5><div class="tags"><span>PG13</span><span>GEO</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/brdzolishemdeg.jpg"><h5>ბრძოლის შემდეგ ბ...</h5><div class="tags"><span>PG</span><span>GEO</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/xmelifotoli.jpg"><h5>ხმელი ფოთოლი</h5><div class="tags"><span>R</span><span>OTH</span></div></div>
+    <div class="movie small"><img src="suratebi/patara/uefa_ucl.jpg"><h5>შტანგა გოლი 2025</h5><div class="tags"><span>R 18+</span><span>Setanta Sports</span></div></div>
+    
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="container divider">
+  იხილეთ მალე...
+</div>
+
+<!-- Ixilet Male-s Filmebi -->
+<section class="container">
+  <div class="movies-grid small">
+    <div class="movie small"><img src="suratebi/patara/songsungblue.jpg"><h5>Song Sung Blue</h5></div>
+    <div class="movie small"><img src="suratebi/patara/playdate.jpg"><h5>Playdate</h5></div>
+    <div class="movie small"><img src="suratebi/patara/moaxle.jpg"><h5>მოახლე</h5></div>
+    <div class="movie small"><img src="suratebi/patara/შეწყალება.jpg"><h5>შეწყალება</h5></div>
+    <div class="movie small"><img src="suratebi/patara/mousehuntforchristmas.jpg"><h5>Mouse Hunt for Ch...</h5></div>
+    <div class="movie small"><img src="suratebi/patara/primate.jpg"><h5>Primate</h5></div>
+  </div>
+</section>
+
+<!-- REGISTER MODAL -->
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeRegister">&times;</span>
+
+    <h3>რეგისტრაცია</h3>
+
+    <form id="registerForm">
+
+      <input type="text" id="email" placeholder="ელ. ფოსტა">
+      <small class="error" id="emailError"></small>
+
+      <input type="text" id="username" placeholder="მომხმარებლის სახელი">
+      <small class="error" id="usernameError"></small>
+
+      <input type="text" id="password" placeholder="პაროლი">
+      <small class="error" id="passwordError"></small>
+      <small id="passwordStrength"></small>
+
+      <input type="password" id="confirmPassword" placeholder="დაადასტურეთ პაროლი">
+      <small class="error" id="confirmError"></small>
+
+      <input type="text" id="regDate" placeholder="DD-MM-YYYY">
+      <small class="error" id="dateError"></small>
+
+      <input type="text" id="country" placeholder="ქვეყანა">
+      <small class="error" id="countryError"></small>
+
+      <input type="text" id="city" placeholder="ქალაქი">
+      <small class="error" id="cityError"></small>
+
+      <input type="text" id="phone" placeholder="მობილურის ნომერი">
+      <small class="error" id="phoneError"></small>
+
+      <button type="submit">რეგისტრაცია</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="#" data-i18n="main">მთავარი</a>
+    <a href="#" data-i18n="festival">ფესტივალი</a>
+    <a href="#" data-i18n="engSessions">ENG სეანსები</a>
+    <a href="#" data-i18n="eventCinema">EVENT CINEMA</a>
+    <a href="#" data-i18n="contact">კონტაქტი</a>
+  </div>
+  <p class="footer-copy">Kinoafisha.ge © 2015-2025</p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
