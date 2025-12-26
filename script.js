@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-// ===== LOGIN MODAL (open/close only) =====
-const loginBtn = document.querySelector(".login"); // "შესვლა" ღილაკი
+// ===== LOGIN MODAL =====
+const loginBtn = document.querySelector(".login"); 
 const loginModal = document.getElementById("loginModal");
 
 if (loginBtn && loginModal) {
@@ -44,21 +44,21 @@ if (loginBtn && loginModal) {
   });
 }
 
-// დახურვა X-ით
+
 document.querySelectorAll("#loginModal .close-modal").forEach(btn => {
   btn.addEventListener("click", () => {
     loginModal.style.display = "none";
   });
 });
 
-// დახურვა ფონზე დაკლიკებით
+
 window.addEventListener("click", (e) => {
   if (e.target === loginModal) {
     loginModal.style.display = "none";
   }
 });
 
-// submit-ზე უბრალოდ დახურვა (არანაირი შემოწმება)
+// submit-ზე დახურვა 
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", (e) => {
@@ -167,20 +167,20 @@ if (loginForm) {
 
       clearErrors();
 
-      // Email (შენი მოთხოვნის მიხედვით: აქვს @, მერე . და ბოლოს მინ 2 სიმბოლო)
+      
       const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
       if (!emailPattern.test(email)) {
         if (emailError) emailError.textContent = "არასწორი ელ. ფოსტა";
         valid = false;
       }
 
-      // Username (დამატებითი ვალიდაცია: მინ. 3)
+      // Username 
       if (username.length < 3) {
         if (usernameError) usernameError.textContent = "მინ. 3 სიმბოლო";
         valid = false;
       }
 
-      // Password (დამატებითი ვალიდაცია: მინ. 6)
+      // Password
       if (password.length < 6) {
         if (passwordError) passwordError.textContent = "მინ. 6 სიმბოლო";
         valid = false;
@@ -210,7 +210,7 @@ if (loginForm) {
         valid = false;
       }
 
-      // Phone (დამატებითი: მინ. 9 ციფრი)
+      // Phone 
       if (!/^[0-9]{9,}$/.test(phone)) {
         if (phoneError) phoneError.textContent = "არასწორი ნომერი";
         valid = false;
@@ -243,7 +243,7 @@ if (loginForm) {
     });
   });
 
-  // ყველა modal-ის დახურვა ერთი ლოგიკით (×)
+  // modal-ის დახურვა
   document.querySelectorAll(".close-modal").forEach(btn => {
     btn.addEventListener("click", () => {
       const parentModal = btn.closest(".modal");
@@ -251,7 +251,7 @@ if (loginForm) {
     });
   });
 
-  // modal-ზე (შავ ფონზე) დაკლიკებით დახურვა
+  // modal დახურვა
   window.addEventListener("click", (e) => {
     if (e.target && e.target.classList && e.target.classList.contains("modal")) {
       e.target.style.display = "none";
@@ -296,7 +296,7 @@ if (loginForm) {
       }
     });
 
-    // (თუ ოდესმე დაგჭირდება placeholder-ები)
+
     document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
       const key = el.dataset.i18nPlaceholder;
       if (translations[lang][key]) {
@@ -312,7 +312,7 @@ if (loginForm) {
     langBtn.textContent = currentLang === "ka" ? "ENG" : "KA";
   }
 
-  // ახალი თეგი (შეტყობინება)
+  // ახალი თეგი მესიჯისთვის
   function showLangMessage(lang) {
     const oldMsg = document.querySelector(".lang-message");
     if (oldMsg) oldMsg.remove();
@@ -331,7 +331,7 @@ if (loginForm) {
     }, 3000);
   }
 
-  // JSON ჯერ უნდა ჩაიტვირთოს, მერე cookie წავიკითხოთ, მერე applyLanguage
+  // JSON, cookieapply, Language
   fetch("lang.json")
     .then(res => res.json())
     .then(data => {
@@ -346,7 +346,7 @@ if (loginForm) {
       updateLangButtonLabel();
     })
     .catch(() => {
-      // თუ lang.json ვერ ჩაიტვირთა, უბრალოდ არ გავთარგმნით
+      
       updateLangButtonLabel();
     });
 
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const switchContainer = document.querySelector(".switch-container");
   if (!switchContainer) return;
 
-  // Panel-ს JS-ით ვქმნით
+  //  panel
   const sessionsPanel = document.createElement("div");
   sessionsPanel.className = "sessions-panel";
   sessionsPanel.style.display = "none";
@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sessionsPanel.appendChild(label);
   sessionsPanel.appendChild(select);
 
-  // ჩავსვათ ღილაკების ქვემოთ
+  
   switchContainer.insertAdjacentElement("afterend", sessionsPanel);
 
   function collectMovieTitles() {
@@ -390,12 +390,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(el => (el.textContent || "").trim())
       .filter(Boolean);
 
-    // დუბლიკატების მოცილება
+    
     return [...new Set(titles)];
   }
 
   function fillSelect() {
-    // ვტოვებთ მხოლოდ პირველ option-ს
+    
     select.querySelectorAll("option:not(:first-child)").forEach(o => o.remove());
 
     const titles = collectMovieTitles();
@@ -408,16 +408,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ერთი listener ორივე ღილაკზე (event delegation)
+  
   switchContainer.addEventListener("click", (e) => {
     const btn = e.target.closest(".switch-btn");
     if (!btn) return;
 
-    // active კლასების მართვა
+    // active კლასები
     document.querySelectorAll(".switch-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    // რომელ tab-ზე დააჭირა?
+    
     if (btn.dataset.tab === "sessions") {
       fillSelect();
       sessionsPanel.style.display = "flex";

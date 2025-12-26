@@ -128,7 +128,7 @@ body {
 }
 
 /* ================= CONTAINER ================= */
-/* 🔴 აქ გავადიდეთ სიგანე */
+
 .container {
   width: 60%;
   margin: 0 auto 35px;
@@ -145,7 +145,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* 🔴 movie card */
+/*  movie card */
 .movie {
   background: #f2f2f2;
   padding: 12px;
@@ -461,7 +461,7 @@ body {
 .sessions-panel{
   width: 60%;
   margin: 0 auto 20px;
-  display: none;              /* თავიდან დამალული */
+  display: none;             
   gap: 10px;
   align-items: center;
 }
@@ -480,7 +480,7 @@ body {
   font-family: 'BPG Nino Mtavruli', Arial, sans-serif;
 }
 
-/* contact modal look */
+/* contact modal  */
 .contact-min{
   max-width: 420px;
   width: 92%;
@@ -489,7 +489,7 @@ body {
   overflow: hidden;
 }
 
-/* header block like your screenshot */
+/* header  */
 .contact-min h3{
   background: #f0f0f0;
   text-align: center;
